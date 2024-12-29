@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "4a6c9935-1bc2-4572-87a1-c6127a30fe19",
+		"name": "strettch-warmup-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37347274"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "research-collab",
+			"item": [
+				{
+					"name": "create a new research document",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjMTBmMTQ1LWIyNjItNDdlNi1iNjlmLTc2MzUyMzM4ZGMyNSIsImVtYWlsIjoiZ2FzaHVnaWFkZXJsaW5lQGdtYWlsLmNvbSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzM1NDA2ODE5LCJleHAiOjE3MzU0MTA0MTl9.pe1W5wc2AekDkfSoi0JMFpdIsOg7OyXCS7q4J9Gmjws",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"content\",\r\n    \"content\": \"this is the content\",\r\n    \"studentId\": \"cc10f145-b262-47e6-b69f-76352338dc25\",\r\n    \"teacherId\": \"4bd098bf-3939-4c97-aa3d-47ac53a7c591\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/research-collab/document",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"research-collab",
+								"document"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a document(student or teacher)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjMTBmMTQ1LWIyNjItNDdlNi1iNjlmLTc2MzUyMzM4ZGMyNSIsImVtYWlsIjoiZ2FzaHVnaWFkZXJsaW5lQGdtYWlsLmNvbSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzM1NDEyMDkwLCJleHAiOjE3MzU0MTU2OTB9.fdP2VL0Z7aGUfdSLiS7xtpKSI57acLnMkOgSXXWdiDk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/research-collab/document/899c59db-5a85-42c0-b990-ad67624b4b42",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"research-collab",
+								"document",
+								"899c59db-5a85-42c0-b990-ad67624b4b42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a document",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjMTBmMTQ1LWIyNjItNDdlNi1iNjlmLTc2MzUyMzM4ZGMyNSIsImVtYWlsIjoiZ2FzaHVnaWFkZXJsaW5lQGdtYWlsLmNvbSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzM1NDE2NDQ1LCJleHAiOjE3MzU0MjAwNDV9.CM0kvRBYRvuTPPEzVdmBduVekkXbnc_f_WAW8KNy6s0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"content updated 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/research-collab/update-document/899c59db-5a85-42c0-b990-ad67624b4b42",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"research-collab",
+								"update-document",
+								"899c59db-5a85-42c0-b990-ad67624b4b42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all documents created by a student",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjMTBmMTQ1LWIyNjItNDdlNi1iNjlmLTc2MzUyMzM4ZGMyNSIsImVtYWlsIjoiZ2FzaHVnaWFkZXJsaW5lQGdtYWlsLmNvbSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzM1NDEwNTYyLCJleHAiOjE3MzU0MTQxNjJ9.UKnyqKTmNGRdWpjMVG6Ua13I7hH5vekjGKQLUmBJBew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/research-collab/all-documents/by-student/cc10f145-b262-47e6-b69f-76352338dc25",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"research-collab",
+								"all-documents",
+								"by-student",
+								"cc10f145-b262-47e6-b69f-76352338dc25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all documents assigned to a teacher",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRiZDA5OGJmLTM5MzktNGM5Ny1hYTNkLTQ3YWM1M2E3YzU5MSIsImVtYWlsIjoiYWRlcmxpbmVjYXJtZWxsYUBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTczNTQxMTY2OCwiZXhwIjoxNzM1NDE1MjY4fQ.2dJIgPDVvC1q7ed7ahR0WcKy1SWkVqIsNlOzTGHU57U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/research-collab/all-documents/by-teacher/4bd098bf-3939-4c97-aa3d-47ac53a7c591",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"research-collab",
+								"all-documents",
+								"by-teacher",
+								"4bd098bf-3939-4c97-aa3d-47ac53a7c591"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "provide feedback",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRiZDA5OGJmLTM5MzktNGM5Ny1hYTNkLTQ3YWM1M2E3YzU5MSIsImVtYWlsIjoiYWRlcmxpbmVjYXJtZWxsYUBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTczNTQxMDE5MywiZXhwIjoxNzM1NDEzNzkzfQ.Oh88if6TPzFjfFn351eoD8JWaBPxq9Ch0hgHdDuIvyE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documentId\": \"899c59db-5a85-42c0-b990-ad67624b4b42\",\r\n    \"teacherId\": \"4bd098bf-3939-4c97-aa3d-47ac53a7c591\",\r\n    \"comment\": \"this is comment 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/research-collab/feedback",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"research-collab",
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments on a document",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjMTBmMTQ1LWIyNjItNDdlNi1iNjlmLTc2MzUyMzM4ZGMyNSIsImVtYWlsIjoiZ2FzaHVnaWFkZXJsaW5lQGdtYWlsLmNvbSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzM1NDEyMDkwLCJleHAiOjE3MzU0MTU2OTB9.fdP2VL0Z7aGUfdSLiS7xtpKSI57acLnMkOgSXXWdiDk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/research-collab/feedback/899c59db-5a85-42c0-b990-ad67624b4b42",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"research-collab",
+								"feedback",
+								"899c59db-5a85-42c0-b990-ad67624b4b42"
+							],
+							"query": [
+								{
+									"key": "aut",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submit a document",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjMTBmMTQ1LWIyNjItNDdlNi1iNjlmLTc2MzUyMzM4ZGMyNSIsImVtYWlsIjoiZ2FzaHVnaWFkZXJsaW5lQGdtYWlsLmNvbSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzM1NDE2NDQ1LCJleHAiOjE3MzU0MjAwNDV9.CM0kvRBYRvuTPPEzVdmBduVekkXbnc_f_WAW8KNy6s0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/research-collab/submit/899c59db-5a85-42c0-b990-ad67624b4b42",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"research-collab",
+								"submit",
+								"899c59db-5a85-42c0-b990-ad67624b4b42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "de-escalate a document(by a teacher)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRiZDA5OGJmLTM5MzktNGM5Ny1hYTNkLTQ3YWM1M2E3YzU5MSIsImVtYWlsIjoiYWRlcmxpbmVjYXJtZWxsYUBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTczNTQxNjk5MSwiZXhwIjoxNzM1NDIwNTkxfQ.FYjY9mjbBZjX3rNMT_TfRlzSrTol3_RvsXheC--PM-E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/research-collab/de-escalate/899c59db-5a85-42c0-b990-ad67624b4b42",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"research-collab",
+								"de-escalate",
+								"899c59db-5a85-42c0-b990-ad67624b4b42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approve a document",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRiZDA5OGJmLTM5MzktNGM5Ny1hYTNkLTQ3YWM1M2E3YzU5MSIsImVtYWlsIjoiYWRlcmxpbmVjYXJtZWxsYUBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTczNTQxNjk5MSwiZXhwIjoxNzM1NDIwNTkxfQ.FYjY9mjbBZjX3rNMT_TfRlzSrTol3_RvsXheC--PM-E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/research-collab/approve/899c59db-5a85-42c0-b990-ad67624b4b42",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"research-collab",
+								"approve",
+								"899c59db-5a85-42c0-b990-ad67624b4b42"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "default"
+		}
+	]
+}
