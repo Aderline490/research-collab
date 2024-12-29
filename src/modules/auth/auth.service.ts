@@ -39,4 +39,13 @@ export class AuthService {
     const token = this.jwtService.sign({ id: user.id, email: user.email, role: user.role, });
     return { message: 'Login successful', token };
   }
+
+  verifyToken(token: string) {
+    try {
+      const decoded = this.jwtService.verify(token);
+      return decoded;
+    } catch (err) {
+      throw new UnauthorizedException('Invalid or expired token');
+    }
+  }
 }

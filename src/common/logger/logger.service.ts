@@ -38,7 +38,6 @@ export class CustomLoggerService extends Logger {
   }
 
   private logToFile(level: LogLevel, message: string, context?: string, trace?: string) {
-    // Example implementation: Append logs to a file
     const fs = require('fs');
     const logMessage = `[${new Date().toISOString()}] [${level.toUpperCase()}] [${
       context || this.context
